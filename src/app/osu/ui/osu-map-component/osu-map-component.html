@@ -1,0 +1,8 @@
+@if (isVisible && this.beatmapState.currentBeatmap()) {
+    @let beatmap = this.beatmapState.currentBeatmap()!;
+    <div class="main" style="border: 1px solid blue; background-color: black;">
+        <p>{{beatmap.beatmapset!.title}}<br></p>
+        <p>{{beatmap.beatmapset!.artist}}<br></p>
+        <p>{{beatmap.beatmapset!.creator}}<br></p>
+    </div>
+}

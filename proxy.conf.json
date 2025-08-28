@@ -1,0 +1,8 @@
+{
+    "/osu":{
+        "target":"https://osu.ppy.sh/",
+        "secure":false,
+        "changeOrigin":true,
+        "pathRewrite": { "^/osu": "" }
+    }
+}
