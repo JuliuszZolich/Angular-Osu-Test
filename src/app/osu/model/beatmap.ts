@@ -1,3 +1,4 @@
+//Wszystkie wartości są jako optional bo w dokumentacji nie było sprecyzowane więc wziąłem je z http requesta
 export type Beatmap = {
     beatmapset_id?: number;
     difficulty_rating?: number;

@@ -11,8 +11,6 @@ type AccessData = {
   refresh_token?: string;
 };
 
-
-
 @Injectable({
   providedIn: 'root',
 })

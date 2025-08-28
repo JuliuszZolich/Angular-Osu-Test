@@ -12,8 +12,10 @@ import { baseUrl } from './shared/access-urls';
 export class OsuApiMapService {
   private httpClient = inject(OsuHttpClient);
 
-  getMapsForScore(scores: Score[]): Observable<Score[]> {
+  getMapsForScores(scores: Score[]): Observable<Score[]> {
     const chunks: Score[][] = [];
+    //Api przyjmuje albo pojedyncze albo w chunkach do max 50
+    //Aby zmniejszyć zużycie robiłem w chunkach
     for (let i = 0; i < scores.length; i += 50) {
       chunks.push(scores.slice(i, i + 50));
     }

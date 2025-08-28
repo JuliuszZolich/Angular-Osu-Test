@@ -13,9 +13,9 @@ export class OsuMapComponent {
 
   constructor(){
      effect(() => {
+      //Efekt do odczytu zmian w sygnale
       const beatmap = this.beatmapState.currentBeatmap();
       if (beatmap) {
-        console.log(beatmap)
         this.isVisible = true;
       }
     });

@@ -18,10 +18,9 @@ export class OsuNotificationList {
   private mapService = inject(OsuApiMapService);
   protected beatmapStateService = inject(OsuMapStateService);
   ngOnInit() {
-
     const fetchScores = () => {
       this.apiService.getScores().subscribe((scores) => {
-        this.mapService.getMapsForScore(scores).subscribe((result) => {
+        this.mapService.getMapsForScores(scores).subscribe((result) => {
           this.scores.push(...result);
         });
       });
