@@ -1,5 +1,15 @@
-<div style="border: 1px solid red;">
-    <p style="width: 100%;">{{score.beatmap!.beatmapset!.title}}</p>
-    <p>{{score.pp}}</p>
-    <p>{{score.passed}}</p>
+<div
+  class="main"
+  [style.background-image]="'url(' + score.beatmap?.beatmapset?.covers?.cover + ')'"
+>
+  <div class="left">
+    <div class="title">{{ score.beatmap!.beatmapset!.title }}</div>
+    <!-- TODO: Zmienić na nazwę usera -->
+    <div class="user">{{ score.user_id }}</div>
+  </div>
+  <div class="right">
+    <div class="pp">{{ score.pp }}pp</div>
+    <!-- TODO: Podział na minuty/godziny -->
+    <div class="timer">{{ timer }}s ago.</div>
+  </div>
 </div>

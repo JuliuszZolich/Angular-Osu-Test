@@ -2,11 +2,18 @@ import { Component, Input, Output } from '@angular/core';
 import { Score } from '../../model/score';
 
 @Component({
-  selector: 'app-osu-score-component',
+  selector: 'osu-score-component',
   imports: [],
   templateUrl: './osu-score-component.html',
-  styleUrl: './osu-score-component.css'
+  styleUrl: './osu-score-component.scss',
 })
 export class OsuScoreComponent {
-  @Input({required:true}) score!: Score
+  @Input({ required: true }) score!: Score;
+  protected timer = 0;
+  ngOnInit() {
+    this.score.pp = Math.round(this.score.pp!);
+    setInterval(() => {
+      this.timer++;
+    }, 1000);
+  }
 }
