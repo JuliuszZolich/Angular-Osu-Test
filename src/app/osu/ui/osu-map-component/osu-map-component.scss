@@ -1,0 +1,61 @@
+.main {
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 1px solid rgb(234, 0, 191);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 80%;
+  height: 80%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.left, .right{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 100%;
+}
+
+.left {
+    width: 70%;
+    margin-left: 10%;
+}
+
+.right{
+    width: 30%;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+
+.title{
+    width: 100%;
+    text-align: left;
+    font-size: xx-large;
+    margin: 20% 0% 5%;
+}
+
+.artist{
+    text-align: left;
+    font-size: x-large;
+    margin: 0 0% 0;
+}
+
+.genre {
+    font-size: large;
+    margin-top: 10%;
+}
+
+.creator{
+    font-size: large;
+    margin: 0 0 15%;
+}
+
+a{ 
+    color: inherit;
+}

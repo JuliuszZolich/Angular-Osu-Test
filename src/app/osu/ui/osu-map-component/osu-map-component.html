@@ -1,8 +1,32 @@
-@if (isVisible && this.beatmapState.currentBeatmap()) {
-    @let beatmap = this.beatmapState.currentBeatmap()!;
-    <div class="main" style="border: 1px solid blue; background-color: black;">
-        <p>{{beatmap.beatmapset!.title}}<br></p>
-        <p>{{beatmap.beatmapset!.artist}}<br></p>
-        <p>{{beatmap.beatmapset!.creator}}<br></p>
+@if (isVisible && this.beatmapState.currentBeatmap()) { @let
+beatmap=this.beatmapState.currentBeatmap()!;
+<!-- TODO zmienić ten styl żeby zawarł się w css -->
+<div
+  class="main"
+  [style.background-image]="
+    'linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),url(' +
+    beatmap.beatmapset!.covers!['list@2x'] +
+    ')'
+  "
+>
+  <div class="left">
+    <div class="title">
+      {{ beatmap.beatmapset?.title }}
     </div>
+    <div class="artist">
+      {{ beatmap.beatmapset?.artist }}
+    </div>
+    @if (beatmap.beatmapset?.genre_id) {
+    <!-- Wedle dokumentacji to pole jest opcjonalne -->
+    <div class="genre">Genre: {{ genre }}</div>
+    }
+    <div class="language">Language: {{ language }}</div>
+  </div>
+  <div class="right">
+    <div class="creator">
+      Mapped by {{ beatmap.beatmapset?.creator }} <br />
+      <a [href]="beatmap.url" target="_blank">Link do mapy</a>
+    </div>
+  </div>
+</div>
 }
