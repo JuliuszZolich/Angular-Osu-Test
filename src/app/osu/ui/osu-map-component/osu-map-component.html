@@ -1,14 +1,7 @@
 @if (isVisible && this.beatmapState.currentBeatmap()) { @let
 beatmap=this.beatmapState.currentBeatmap()!;
-<!-- TODO zmienić ten styl żeby zawarł się w css -->
-<div
-  class="main"
-  [style.background-image]="
-    'linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),url(' +
-    beatmap.beatmapset!.covers!['list@2x'] +
-    ')'
-  "
->
+<!-- Dodać że jeżeli ten komponent jest "kwadratowy na ekranie to list a w innym przypadku jakiś cover" -->
+<div class="main" [style.--bg-image]="'url(' + beatmap.beatmapset!.covers!['list@2x'] + ')'">
   <div class="left">
     <div class="title">
       {{ beatmap.beatmapset?.title }}

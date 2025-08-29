@@ -13,8 +13,21 @@
   display: flex;
   justify-content: center;
   align-items: center;
+background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), var(--bg-image);
+
+  animation: showup 100ms linear;
+  @keyframes showup {
+    from{
+        opacity: 0%;
+    }
+    to{
+        opacity: 100%;
+    }
+  }
 }
-.left, .right{
+
+.left,
+.right {
     display: flex;
     flex-direction: column;
     position: relative;
