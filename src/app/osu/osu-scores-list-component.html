@@ -1,0 +1,12 @@
+<h1>Osu scores list:</h1>
+
+<osu-map-component />
+
+<div class="lista">
+  @for (score of this.scores; track score.id) {
+  <osu-score-component
+    [score]="score"
+    (click)="this.beatmapStateService.setBeatMap(score.beatmap!)"
+  />
+  }
+</div>

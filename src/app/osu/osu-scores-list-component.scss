@@ -1,0 +1,34 @@
+h1 {
+ text-align: center;   
+}
+
+.lista {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+osu-score-component {
+    margin: 1% 0 1% 0;
+    display: block;
+    width: 90%;
+    border: 2px solid;
+    border-radius: 5px;
+
+    animation: borderColorTransition 10s linear forwards;
+
+    @keyframes borderColorTransition {
+        from {
+            border-color: green;
+        }
+        to {
+            border-color: red;
+        }
+    }
+}
+
+
+osu-score-component:hover{
+    border-style: dashed;
+}

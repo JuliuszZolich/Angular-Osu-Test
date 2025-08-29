@@ -7,10 +7,10 @@ import { OsuMapComponent } from './ui/osu-map-component/osu-map-component';
 import { OsuMapStateService } from './ui/osu-map-component/osu-map-state-service';
 
 @Component({
-  selector: 'app-osu-notification-list',
+  selector: 'osu-scores-list',
   imports: [OsuScoreComponent, OsuMapComponent],
-  templateUrl: './osu-notification-list.component.html',
-  styleUrl: './osu-notification-list.component.css',
+  templateUrl: './osu-scores-list-component.html',
+  styleUrl: './osu-scores-list-component.scss',
 })
 export class OsuNotificationList {
   protected scores = [] as Score[];
@@ -21,7 +21,7 @@ export class OsuNotificationList {
     const fetchScores = () => {
       this.apiService.getScores().subscribe((scores) => {
         this.mapService.getMapsForScores(scores).subscribe((result) => {
-          this.scores.push(...result);
+          this.scores.unshift(...result);
         });
       });
     };
