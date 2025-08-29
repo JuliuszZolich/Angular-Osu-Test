@@ -1,0 +1,24 @@
+.main {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height: 5%;
+
+  a {
+    width: 20%;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    font-size: larger;
+    color:inherit;
+    text-decoration: none;
+    
+  }
+  a:hover{
+    border:2px solid gray;
+  }
+}
