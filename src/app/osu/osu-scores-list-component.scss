@@ -1,34 +1,38 @@
 h1 {
- text-align: center;   
+  text-align: center;
 }
 
 .lista {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 osu-score-component {
-    margin: 1% 0 1% 0;
-    display: block;
-    width: 90%;
-    border: 2px solid;
-    border-radius: 5px;
+  margin: 1% 0 1% 0;
+  display: block;
+  width: 90%;
+  border: 2px solid;
+  border-radius: 5px;
 
-    animation: borderColorTransition 10s linear forwards;
+  animation: borderColorTransition 10s linear forwards, sizeup 0.2s linear forwards;
 
-    @keyframes borderColorTransition {
-        from {
-            border-color: green;
-        }
-        to {
-            border-color: red;
-        }
+  @keyframes borderColorTransition {
+    from {
+      border-color: green;
     }
+    to {
+      border-color: red;
+    }
+  }
+  @keyframes sizeup {
+    from {
+      transform: translateX(100%);
+    }
+  }
 }
 
-
-osu-score-component:hover{
-    border-style: dashed;
+osu-score-component:hover {
+  border-style: dashed;
 }
