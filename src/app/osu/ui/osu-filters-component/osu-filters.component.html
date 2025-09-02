@@ -1,0 +1,60 @@
+<div class="main">
+  <div class="top">
+    <p>Filters:</p>
+    <div class="showButton" (click)="this.isVisible = !this.isVisible">
+      <p>Toggle filters</p>
+    </div>
+  </div>
+
+  @if (this.isVisible) {
+  <div class="filters">
+    <form [formGroup]="filters">
+      <input type="text" id="searchBar" placeholder="Beatmap name" formControlName="search" />
+
+      <label for="start">Choose beatmap star range</label>
+      <mat-slider id="stars" min="0" [max]="this.topStars" discrete>
+        <input value="0" formControlName="starsMin" matSliderStartThumb/>
+        <input [value]="this.topStars" formControlName="starsMax" matSliderEndThumb />
+      </mat-slider>
+
+      <label for="start">Choose score pp range</label>
+      <mat-slider id="pp" min="0" [max]="this.topPP" discrete>
+        <input value="0" formControlName="ppMin" matSliderStartThumb />
+        <input [value]="this.topPP" formControlName="ppMax" matSliderEndThumb />
+      </mat-slider>
+
+      <div class="container">
+        <div class="genres">
+          <p>Choose genres</p>
+          @for (genre of genreEntries; track genre.id) {
+          <div class="genre-option">
+            <input
+              type="checkbox"
+              [id]="'genre-' + genre.id"
+              [value]="genre.id"
+              (click)="this.toggleGenre(genre.id)"
+            />
+            <label [for]="'genre-' + genre.id">{{ genre.name }}</label>
+          </div>
+          }
+        </div>
+
+        <div class="languages">
+          <p>Choose languages</p>
+          @for (language of languageEntries; track language.id) {
+          <div class="language-option">
+            <input
+              type="checkbox"
+              [id]="'language-' + language.id"
+              [value]="language.id"
+              (click)="this.toggleLanguage(language.id)"
+            />
+            <label [for]="'language-' + language.id">{{ language.name }}</label>
+          </div>
+          }
+        </div>
+      </div>
+    </form>
+  </div>
+  }
+</div>

@@ -1,0 +1,71 @@
+.top,
+.filters {
+  display: flex;
+  padding: 0 10% 0 10%;
+  margin: 0 10% 0 10%;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid blue;
+}
+
+.top {
+  flex-wrap: wrap-reverse;
+}
+
+.filters {
+  display: flex;
+  flex-direction: column;
+
+  clip-path: inset(100% 0 0 0); /* Ukrywa górną część */
+  animation: slideReveal 0.2s ease-out forwards;
+
+  @keyframes slideReveal {
+    from {
+      clip-path: inset(0 0 100% 0); /* Całkowicie ukryte */
+    }
+    to {
+      clip-path: inset(0 0 0 0); /* Całkowicie widoczne */
+    }
+  }
+}
+.filters input,
+mat-slider {
+  width: 100%;
+  margin: 0 5% 5% 0;
+}
+
+input {
+  background-color: black;
+  color: white;
+  border: 0;
+  font-size: large;
+  align-content: center;
+}
+
+#searchBar {
+  text-align: center;
+  margin-top: 5%;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.genres,
+.languages {
+  font-size: large;
+  width: 50%;
+  input,
+  label {
+    margin: 0;
+    width: 50%;
+    text-wrap: nowrap;
+  }
+  input {
+    width: auto;
+  }
+  label {
+    margin-left: 20%;
+  }
+}
