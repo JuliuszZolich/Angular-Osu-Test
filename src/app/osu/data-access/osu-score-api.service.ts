@@ -7,7 +7,7 @@ import { baseUrl } from './shared/access-urls';
 @Injectable({
   providedIn: 'root',
 })
-export class OsuNotificationApiService {
+export class OsuScoreApiService {
   private httpClient = inject(OsuHttpClient);
   private cursorString = '';
 
@@ -17,7 +17,7 @@ export class OsuNotificationApiService {
       (this.cursorString !== '' ? '?cursor_string=' + this.cursorString : '')
     ).pipe(
       tap((response) => this.cursorString = response.cursor_string),
-      map((response) => response.scores.filter((s)=>s.pp!>400))
+      map((response) => response.scores)
     );
   }
 
