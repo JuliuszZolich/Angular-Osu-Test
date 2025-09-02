@@ -8,7 +8,6 @@ type AccessData = {
   token_type: string;
   expires_in: number;
   access_token: string;
-  refresh_token?: string;
 };
 
 @Injectable({
@@ -29,6 +28,9 @@ export class OsuHttpClient {
       .pipe(
         tap((response) => {
           this.token = response.access_token;
+          setTimeout(()=>{
+            this.token = undefined;
+          }, response.expires_in * 1000)
         }),
         map((response) => response.access_token)
       );
