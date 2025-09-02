@@ -9,8 +9,9 @@ import { Score } from '../../model/score';
 })
 export class OsuScoreComponent {
   @Input({ required: true }) score!: Score;
-  protected timer = 0;
+  protected timer: number = 0;
   ngOnInit() {
+    this.timer = Math.floor((Date.now() - Date.parse(this.score.ended_at))/1000);
     this.score.pp = Math.round(this.score.pp!);
     setInterval(() => {
       this.timer++;
