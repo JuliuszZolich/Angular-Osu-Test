@@ -2,8 +2,10 @@
 
 <osu-map-component />
 
+<osu-filters-component />
+
 <div class="lista">
-  @for (score of this.scores; track score.id) {
+  @for (score of this.filteredScores(); track score.id) {
   <osu-score-component
     [score]="score"
     (click)="this.beatmapStateService.setBeatMap(score.beatmap!)"
