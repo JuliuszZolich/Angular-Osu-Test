@@ -3,7 +3,7 @@ export const languages = {
     2:"English",
     3:"Japanese",
     4:"Chinese",
-    5:"Instrumenatal",
+    5:"Instrumental",
     6:"Korean",
     7:"French",
     8:"German",
